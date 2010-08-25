@@ -21,7 +21,7 @@ my $ns=Net::DNS::Nameserver->new(
 my @ns;
 
 my %cache;
-my $ttl=30;
+my $ttl=3600;
 
 my $res=Net::DNS::Resolver->new;
 
