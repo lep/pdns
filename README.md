@@ -14,8 +14,7 @@ But it works on atleast two systems: my Debian workstation and my
 FreeBSD server. I also wrote an rc.d-script for pdns.
 
 ## Installation
-Maybe this works
-(FreeBSD)
+Maybe this works (FreeBSD):
 	cp pdns-nameserver /usr/local/etc/
 	cp pdns.pl /usr/local/bin/pdns
 	cp pdns.sh /etc/rd.c/pdns
@@ -33,7 +32,7 @@ Maybe this works
 	tar xf Proc-Daemon-0.03.tar.gz
 	cd Proc-Daemon-0.03/ && perl Makefile.PL && make install
 
-You may also add `pdns_enable="YES"` in your /etc/rc.conf
+You may also add `pdns_enable="YES"` to your /etc/rc.conf
 
 ## Requirements
 * Perl 5
