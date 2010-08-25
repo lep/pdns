@@ -14,8 +14,8 @@ But it works on atleast two systems: my Debian workstation and my
 FreeBSD server. I also wrote an rc.d-script for pdns.
 
 ## Requirements
-Perl 5
-Net::DNS
-Proc::PID::File
-Proc::Daemon
-List::Util
+* Perl 5
+* Net::DNS
+* Proc::PID::File
+* Proc::Daemon
+* List::Util
