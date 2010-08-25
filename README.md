@@ -16,7 +16,7 @@ FreeBSD server. I also wrote an rc.d-script for pdns.
 ## Installation
 Maybe this works
 (FreeBSD)
-	cp pdns-nameserver /usr/local/etc
+	cp pdns-nameserver /usr/local/etc/
 	cp pdns.pl /usr/local/bin/pdns
 	cp pdns.sh /etc/rd.c/pdns
 	cd /usr/ports/lang/perl5.10/ && make install clean
