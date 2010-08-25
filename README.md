@@ -13,6 +13,28 @@ Also i absolutely made no code-tests.
 But it works on atleast two systems: my Debian workstation and my
 FreeBSD server. I also wrote an rc.d-script for pdns.
 
+## Installation
+Maybe this works
+(FreeBSD)
+	cp pdns-nameserver /usr/local/etc
+	cp pdns.pl /usr/local/bin/pdns
+	cp pdns.sh /etc/rd.c/pdns
+	cd /usr/ports/lang/perl5.10/ && make install clean
+	cd /tmp/
+	wget http://search.cpan.org/CPAN/authors/id/O/OL/OLAF/Net-DNS-0.66.tar.gz
+	tar xf Net-DNS-0.66.tar.gz
+	cd Net-DNS-0.66/ && perl Makefile.PL && make install
+	cd /tmp/
+	wget http://search.cpan.org/CPAN/authors/id/E/EC/ECALDER/Proc-PID-File-1.27.tar.gz
+	tar xf Proc-PID-File-1.27.tar.gz
+	cd  Proc-PID-File-1.27/ && perl Makefile.PL && make install
+	cd /tmp/
+	wget http://search.cpan.org/CPAN/authors/id/E/EH/EHOOD/Proc-Daemon-0.03.tar.gz
+	tar Proc-Daemon-0.03.tar.gz
+	cd Proc-Daemon-0.03/ && perl Makefile.PL && make install
+
+You may also add `pdns_enable="YES"` in your /etc/rc.conf
+
 ## Requirements
 * Perl 5
 * Net::DNS
