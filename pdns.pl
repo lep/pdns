@@ -61,7 +61,7 @@ sub reply_handler {
         my ($rcode, @ans, @auth, @add);
 
         my $lp=$cache{$qname}{$qtype}{$qclass};
-        if( !$lp || ($lp->{update} > +time) || $lp->{error} ){
+        if( !$lp || ($lp->{update} < +time) || $lp->{error} ){
                 update_entry $qname, $qtype, $qclass;
         }
         $lp=$cache{$qname}{$qtype}{$qclass};
