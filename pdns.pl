@@ -4,17 +4,17 @@ use warnings;
 
 use Net::DNS::Nameserver;
 use List::Util 'shuffle';
-use Proc::Daemon;
-use Proc::PID::File;
+#use Proc::Daemon;
+#use Proc::PID::File;
 
-Proc::Daemon::Init;
-if(Proc::PID::File->running()){
-        exit 0;
-}
+#Proc::Daemon::Init;
+#if(Proc::PID::File->running()){
+#        exit 0;
+#}
 
 my $ns=Net::DNS::Nameserver->new(
         LocalAddr       => '127.0.0.1',
-        LocalPort       => '53',
+        LocalPort       => '1953',
         ReplyHandler    => \&reply_handler,
 );
 
@@ -61,7 +61,7 @@ sub reply_handler {
         my ($rcode, @ans, @auth, @add);
 
         my $lp=$cache{$qname}{$qtype}{$qclass};
-        if( !$lp || ($lp->{update} < +time) || $lp->{error} ){
+        if( !$lp || ($lp->{update} > +time) || $lp->{error} ){
                 update_entry $qname, $qtype, $qclass;
         }
         $lp=$cache{$qname}{$qtype}{$qclass};
