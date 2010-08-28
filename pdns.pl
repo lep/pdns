@@ -4,13 +4,13 @@ use warnings;
 
 use Net::DNS::Nameserver;
 use List::Util 'shuffle';
-#use Proc::Daemon;
-#use Proc::PID::File;
+use Proc::Daemon;
+use Proc::PID::File;
 
-#Proc::Daemon::Init;
-#if(Proc::PID::File->running()){
-#        exit 0;
-#}
+Proc::Daemon::Init;
+if(Proc::PID::File->running()){
+        exit 0;
+}
 
 my $ns=Net::DNS::Nameserver->new(
         LocalAddr       => '127.0.0.1',
